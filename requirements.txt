@@ -1,6 +1,6 @@
 Flask==0.10.1
 Flask-PyMongo==0.3.1
 Flask-RESTful==0.3.3
-Jinja2==2.7.34
+Jinja2==2.9.6
 pymongo==2.8.1
 gunicorn==19.7.1
