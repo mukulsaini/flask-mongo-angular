@@ -1,0 +1,38 @@
+.language_list {
+	position: relative;
+    float: right;
+    overflow-x: hidden;
+    padding: 30px;
+    border-radius : 5px;
+    box-shadow: 2px 1px 0 1px silver;
+    right: 30px;
+}
+
+.header_tech{
+	text-align: center;
+	padding : 20px;
+	margin-bottom: 30px;
+	color: #f2f3f4;
+	background: black;
+	box-shadow: 0px 4px 8px 0px grey;
+}
+.header_tech h2{
+	cursor: pointer;
+}
+
+.techList{
+	width: 300px;
+	padding: 30px;
+	margin-right: 30px; 
+}
+body{
+	background: beige;
+}
+.reposList{
+	width: 80%;
+	margin : 0 auto;
+}
+.userRepoList{
+	width: 80%;
+	margin: 0 auto;
+}

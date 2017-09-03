@@ -1,0 +1,61 @@
+<html ng-app="app">
+	<head>
+		<title>TechScan - CAST</title>
+	</head>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="static/css/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script type="text/javascript" src="static/javascript/app.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <script type="text/javascript" src="static/javascript/semantic.min.js"></script>
+
+    <body ng-controller="sampleController">
+        <div class="header_tech"> 
+        	<h2 ng-click="reset()">TECH SCAN</h2>
+        </div>
+
+        <div class="techList" ng-hide="hideTechList">
+        	<h2 style="color:burlywood; text-align:center; margin-bottom: 20px;">Languages</h2>
+          	<div ng-repeat="a in arr" class="ui middle aligned divided list">
+			  <div  class="item">
+			    <div class="content">
+			      <a class="header" ng-click="getRepos(a)">{{a._id}}<span style="float:right">{{a.count}}</span></a>
+			    </div>
+			  </div>
+			</div>
+        </div>
+
+        <div  class="reposList" ng-hide="hideRepoList">
+        	<h2 style="text-align:center">Repositories  by Tech - {{selectedLanguage}}</h2>
+        	<div class="ui input" align="right">
+			  <input ng-model="search" type="text" placeholder="Search...">
+			</div>
+        	<div   class="ui relaxed divided list">
+			  <div ng-repeat="a in arrRepo | filter:search" class="item">
+			    <div class="content">
+			      <a ng-click="getReposByUser(a.payload.pull_request.base.repo.owner)" class="header">{{a.payload.pull_request.base.repo.full_name}}</a>
+			      <div class="description">{{a.payload.pull_request.base.repo.description}}</div>
+			    </div>
+			  </div>
+			</div>
+
+        </div>
+
+        <div class="userRepoList" ng-hide="hideRepoListByUser">
+	        <div class="ui card">
+			  <div class="image">
+			    <img src="{{selectedUser.avatar_url}}">
+			  </div>
+			  <div class="content">
+			    <a class="header">{{selectedUser.login}}</a>
+			  </div>
+			</div>
+			<h3>Repositories</h3>
+        	<div ng-repeat="a in arrRepoByUser">
+        		<p ><b>{{a.payload.pull_request.base.repo.name}}</p>
+        	</div>
+        </div>
+    </body>
+</html>
