@@ -1,0 +1,12 @@
+language: python
+python:
+  - "3.6.0"
+install:
+  - pip install -r requirements.txt
+script: 
+  - python app.py > /dev/null &
+  - nosetests --with-coverage
+sudo: required
+branches:
+  only:
+    - master

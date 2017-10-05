@@ -4,3 +4,4 @@ Flask-RESTful==0.3.3
 Jinja2==2.9.6
 pymongo==2.8.1
 gunicorn==19.7.1
+coverage
